@@ -1,17 +1,21 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const NavBar = () => {
   return (
     <nav className="flex items-center justify-between bg-white px-6 py-4 shadow-md">
       <div className="text-3xl font-bold text-gray-800">
-        <Link href="/">SEO Optimizer</Link>
+        <Link className="flex items-center gap-4" href="/">
+          <Image src="/logo.png" alt="SEO Optimizer" width={40} height={40} />
+          SEO Optimizer
+        </Link>
       </div>
       <div>
         <Link
           href="https://github.com/starbornone/seo-optimizer"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex gap-2 font-medium text-cyan-500 hover:text-cyan-700"
+          className="flex items-center gap-2 text-cyan-500 hover:text-cyan-700"
         >
           <svg
             aria-hidden="true"

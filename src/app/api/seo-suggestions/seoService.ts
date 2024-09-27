@@ -12,6 +12,14 @@ const openai = new OpenAI({
  * @returns A promise that resolves to the SEO suggestions.
  */
 export async function generateSEOSuggestions(title: string, content: string): Promise<Suggestions> {
+  const MAX_INPUT_LENGTH = 1000;
+
+  if (title.length + content.length > MAX_INPUT_LENGTH) {
+    throw new Error(
+      `Input length exceeds the maximum allowed limit of ${MAX_INPUT_LENGTH} characters.`
+    );
+  }
+
   const messages: OpenAI.ChatCompletionMessageParam[] = [
     {
       role: 'system',

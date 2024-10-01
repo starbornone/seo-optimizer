@@ -14,7 +14,7 @@ const openai = new OpenAI({
 export async function generateSEOSuggestions(title: string, content: string): Promise<Suggestions> {
   const MAX_INPUT_LENGTH = 1000;
 
-  if (title.length + content.length > MAX_INPUT_LENGTH) {
+  if (content.length > MAX_INPUT_LENGTH) {
     throw new Error(
       `Input length exceeds the maximum allowed limit of ${MAX_INPUT_LENGTH} characters.`
     );

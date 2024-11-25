@@ -1,7 +1,7 @@
-import aspectRatio from "@tailwindcss/aspect-ratio";
-import forms from "@tailwindcss/forms";
-import typography from "@tailwindcss/typography";
-import type { Config } from "tailwindcss";
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -12,8 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["Merriweather", "serif"],
-        sans: ["Inter", "sans-serif"],
+        sans: ['Lexend', 'sans-serif'],
       },
     },
   },

@@ -25,7 +25,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ onSubmit, loading }) => {
 
   const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputContent = e.target.value;
-    if (inputContent.length > MAX_CHARACTERS) {
+    if (!apiKey && inputContent.length > MAX_CHARACTERS) {
       setContent(inputContent.slice(0, MAX_CHARACTERS));
     } else {
       setContent(inputContent);
@@ -36,7 +36,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ onSubmit, loading }) => {
     const pasteData = e.clipboardData.getData('text');
     const newValue = content + pasteData;
 
-    if (newValue.length > MAX_CHARACTERS) {
+    if (!apiKey && newValue.length > MAX_CHARACTERS) {
       e.preventDefault();
       setContent(newValue.slice(0, MAX_CHARACTERS));
     }
@@ -84,7 +84,8 @@ export const SeoForm: React.FC<SeoFormProps> = ({ onSubmit, loading }) => {
         </div>
         <div>
           <p className="mb-2">
-            Want to avoid the character limit? Enter your own OpenAI API key below. You can get one{' '}
+            Need more flexibility? Enter your OpenAI API key below to bypass character limits.
+            Don&apos;t have one? You can create an API key{' '}
             <Link
               className="text-cyan-500 hover:text-cyan-700"
               href="https://platform.openai.com/signup"
@@ -93,7 +94,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ onSubmit, loading }) => {
             >
               here
             </Link>
-            . We&apos;re currently using GPT-4 to handle the SEO suggestions.
+            . We&apos;re using GPT-4 to provide SEO suggestions.
           </p>
           <label className="sr-only mb-2 block font-semibold text-gray-800">API Key:</label>
           <input

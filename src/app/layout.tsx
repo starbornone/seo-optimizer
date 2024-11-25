@@ -11,8 +11,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: 'SEO Optimizer',
-  description: "Enhance your content's SEO with AI-generated suggestions.",
+  title: 'SEO Optimizer - Boost Your Website Ranking',
+  description:
+    'Optimize your website content with AI-powered SEO suggestions for better visibility and higher rankings.',
 };
 
 export default function RootLayout({

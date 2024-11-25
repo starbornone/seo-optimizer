@@ -5,9 +5,8 @@ import { Lexend } from 'next/font/google';
 
 const lexend = Lexend({
   subsets: ['latin'],
-  variable: '--font-lexend',
-  weight: ['300', '400', '700', '900'],
   display: 'swap',
+  variable: '--font-lexend',
 });
 
 export const metadata: Metadata = {

@@ -38,24 +38,28 @@ export async function generateSEOSuggestions(
   const messages: OpenAI.ChatCompletionMessageParam[] = [
     {
       role: 'system',
-      content: 'You are an SEO expert that helps improve website content.',
+      content: `You are an SEO expert with extensive experience in optimizing content for better search engine rankings. Your task is to assist users in improving titles, descriptions, and keywords for their website content.`,
     },
     {
       role: 'user',
-      content: `As an SEO expert, improve the following content.
-
-        Given the title:
-        "${title}"
-
-        And the content:
-        "${content}"
-
-        Provide a better SEO title, description, and keywords in JSON format like:
-        {
-          "title": "Your suggested title",
-          "description": "Your suggested description",
-          "keywords": ["keyword1", "keyword2", "keyword3"]
-        }`,
+      content: `
+  As an SEO expert, improve the following content for search engine optimization. Carefully analyze the input to generate a better SEO title, description, and keyword list.
+  
+  **Input:**
+  - Title: "${title}"
+  - Content: "${content}"
+  
+  **Requirements:**
+  1. Provide a new, optimized SEO-friendly title that is concise and captures the essence of the content.
+  2. Draft a compelling and keyword-rich meta description (up to 160 characters) to improve click-through rates.
+  3. Suggest 3-8 relevant and high-impact keywords derived from the given content.
+  
+  **Output Format (in strict JSON):**
+  {
+    "title": "Your suggested title",
+    "description": "Your suggested description",
+    "keywords": ["keyword1", "keyword2", "keyword3", "keyword4"]
+  }`,
     },
   ];
 
